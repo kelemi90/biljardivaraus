@@ -1,19 +1,36 @@
 import streamlit as st
+import urllib.parse
+from pathlib import Path
 
-st.set_page_config(
-    page_title="Biljardin varausjärjestelmä",
-    page_icon="🎱",
-    layout="centered"
-)
+# Määrittele käytettävät sivut
+pages = {
+    "lomake": "sivu_lomake.py",
+    "varaukset": "sivu_varaukset.py",
+    "ohjaaja": "sivu_ohjaaja.py",
+    "qr": "sivu_qr.py"
+}
 
-st.title("🎱 Biljardivarausjärjestelmä")
+# Ota page-parametri URL:sta
+query_params = st.query_params
+page = query_params.get("page", [None])[0]
 
-st.markdown("""
-Tervetuloa varaamaan biljardivuoroja!
+# Aja haluttu sivu
+if page in pages:
+    file = Path(pages[page])
+    if file.exists():
+        with open(file, "r", encoding="utf-8") as f:
+            code = f.read()
+        exec(code, globals())  # Ajetaan valittu sivu
+    else:
+        st.error("Sivua ei löytynyt.")
+else:
+    # Etusivu, jos ei page-parametria
+    st.title("🎱 Biljardivarausjärjestelmä")
+    st.markdown("""
+    Käytä suoraa osoitetta:
 
-➡️ Käytä vasemman reunan valikkoa:
-- **Tee varaus**: Pelaajat syöttävät nimensä ja 4-numeroisen tokenin
-- **Varaukset ja pelin lopetus**: Näet nykyisen ja seuraavan peliparin, ja voit lopettaa pelin
-- **QR-koodi**: Luo QR-koodi varauslomakkeelle
-- **Ohjaaja**: Salasanalla suojattu näkymä päivän kaikkiin varauksiin
-""")
+    - `/streamlit_app.py?page=lomake` – Tee varaus
+    - `/streamlit_app.py?page=varaukset` – Näytä varaukset ja lopeta peli
+    - `/streamlit_app.py?page=ohjaaja` – Ohjaajan näkymä
+    - `/streamlit_app.py?page=qr` – QR-koodin generointi
+    """)
