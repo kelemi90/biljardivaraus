@@ -1,0 +1,17 @@
+{
+  "date": "2025-04-23",
+  "reservations": [
+    {
+      "players": "Matti & Teppo",
+      "creator": "Matti",
+      "token": "1212",
+      "date": "2025-04-23"
+    },
+    {
+      "players": "Ohjaaja & Ismo",
+      "creator": "Ohjaaja",
+      "token": "1213",
+      "date": "2025-04-23"
+    }
+  ]
+}

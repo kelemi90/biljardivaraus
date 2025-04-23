@@ -45,3 +45,7 @@ if st.button("🧹 Tyhjennä tämän päivän varaukset"):
     with open(LOG_FILE, "w") as f:
         json.dump(log_data, f, indent=2)
     st.success("Kaikki tämän päivän varaukset poistettu.")
+
+
+# Lisää kellonaika kun varaus tehty
+# Lisää kellonaika kun peli lopetettu

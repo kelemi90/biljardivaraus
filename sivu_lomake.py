@@ -63,3 +63,5 @@ with st.form("varaus_form"):
             save_data(log_data, LOG_FILE)
 
             st.success("Varaus tehty onnistuneesti!")
+
+# Sivu tulee ajaa refresh kun varaus tehty 

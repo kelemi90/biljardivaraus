@@ -53,3 +53,6 @@ if len(temp_data["reservations"]) > 1:
     st.write(temp_data["reservations"][1]["players"])
 else:
     st.write("Ei vielä seuraavaa paria.")
+
+
+# Kun varaus lopeteettu, aja sivun refresh
