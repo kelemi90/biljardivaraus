@@ -1,3 +1,0 @@
-# ignore
-reservations_log.json
-reservations_temp.json
