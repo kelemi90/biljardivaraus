@@ -1,36 +1,36 @@
 import streamlit as st
-import urllib.parse
+import importlib.util
 from pathlib import Path
 
-# Määrittele käytettävät sivut
-pages = {
-    "lomake": "sivu_lomake.py",
-    "varaukset": "sivu_varaukset.py",
-    "ohjaaja": "sivu_ohjaaja.py",
-    "qr": "sivu_qr.py"
-}
+# Määrittele saatavilla olevat sivut ja niiden tiedostopolut
+# pages = {
+#     "lomake": "sivu_lomake.py",
+#     "varaukset": "sivu_varaukset.py",
+#     "ohjaaja": "sivu_ohjaaja.py",
+#     "qr": "sivu_qr.py"
+# }
 
-# Ota page-parametri URL:sta
-query_params = st.query_params
-page = query_params.get("page", [None])[0]
+# # Hae URL-parametri ?page=...
+# query_params = st.query_params
+# page = query_params.get("page", [None])[0]
 
-# Aja haluttu sivu
-if page in pages:
-    file = Path(pages[page])
-    if file.exists():
-        with open(file, "r", encoding="utf-8") as f:
-            code = f.read()
-        exec(code, globals())  # Ajetaan valittu sivu
-    else:
-        st.error("Sivua ei löytynyt.")
-else:
-    # Etusivu, jos ei page-parametria
-    st.title("🎱 Biljardivarausjärjestelmä")
-    st.markdown("""
-    Käytä suoraa osoitetta:
+# # Jos parametrina on tunnettu sivu, ladataan se dynaamisesti
+# if page in pages:
+#     filepath = Path(pages[page])
+#     if filepath.exists():
+#         spec = importlib.util.spec_from_file_location("module.name", filepath)
+#         module = importlib.util.module_from_spec(spec)
+#         spec.loader.exec_module(module)
+#     else:
+#         st.error(f"Sivua '{page}' ei löytynyt.")
+# else:
+#     # Jos ei ole parametria tai tuntematon sivu
+#     st.title("🎱 Biljardivarausjärjestelmä")
+#     st.markdown("""
+#     Käytä näitä URL-osoitteita:
 
-    - `/streamlit_app.py?page=lomake` – Tee varaus
-    - `/streamlit_app.py?page=varaukset` – Näytä varaukset ja lopeta peli
-    - `/streamlit_app.py?page=ohjaaja` – Ohjaajan näkymä
-    - `/streamlit_app.py?page=qr` – QR-koodin generointi
-    """)
+#     - `/streamlit_app.py?page=lomake` – Pelaajien varauslomake  
+#     - `/streamlit_app.py?page=varaukset` – Käynnissä olevat pelit & "Peli päättyi"  
+#     - `/streamlit_app.py?page=ohjaaja` – Ohjaajan näkymä  
+#     - `/streamlit_app.py?page=qr` – QR-koodin generointi  
+#     """)
