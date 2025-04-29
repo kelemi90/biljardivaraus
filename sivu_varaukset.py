@@ -37,10 +37,11 @@ if not st.session_state.end_open:
     if st.button("Peli päättyi!"):
         st.session_state.end_open = True
 else:
-    name = st.text_input("Syötä oma nimesi (pelaaja 1 tai 2)")
+    # name = st.text_input("Syötä oma nimesi (pelaaja 1 tai 2)")
     token_input = st.text_input("Syötä token", type="password")
     if st.button("Vahvista lopetus"):
-        if name.strip().lower() in current["players"].lower() and token_input == current["token"]:
+        # if name.strip().lower() in current["players"].lower() and token_input == current["token"]:
+        if token_input == current["token"]:    
             # Poistetaan tempistä
             temp_data["reservations"].pop(0)
             save_data(temp_data, TEMP_FILE)
@@ -57,7 +58,7 @@ else:
             st.session_state.end_open = False
             st.rerun()
         else:
-            st.error("Nimi tai token ei täsmää.")
+            st.error("Token ei täsmää.") # Nimi tai ...
 
 st.divider()
 
