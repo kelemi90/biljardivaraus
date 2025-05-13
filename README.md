@@ -2,7 +2,7 @@
 Nurkkaan suunniteltu biljardivaraus järjestelmä
 
 # Muista aina!
-uv init
+uv init /n
 uv sync
 uv run streamlit run main.py --client.showSidebarNavigation=False
 
