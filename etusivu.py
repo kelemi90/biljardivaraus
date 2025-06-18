@@ -27,7 +27,7 @@ else:
     # Jos ei ole parametria tai tuntematon sivu
     st.markdown("""
     # 🎱 Biljardivarausjärjestelmä  
-    # Billiard Reservation System
+    # 🎱 Billiard Reservation System
     """)
 
     st.markdown("""
