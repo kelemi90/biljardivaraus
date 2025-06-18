@@ -16,4 +16,4 @@
 # streamlit run /home/kipe/biljardivaraus/pages/04_qr.py --server.port 8504 &
 
 echo "Käynnistetään: main"
-uv run streamlit run /home/kipe/biljardivaraus/main.py --client.showSidebarNavi>
+uv run streamlit run /home/kipe/biljardivaraus/streamlit_app.py --client.showSidebarNavi>
