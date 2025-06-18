@@ -5,7 +5,7 @@ import base64
 
 st.set_page_config(page_title="QR-koodi varauslomakkeelle", page_icon="📱")
 
-st.markdown("#📱 QR-koodi varauslomakkeelle \n# QR Code for Reservation Form")
+st.markdown("#📱QR-koodi varauslomakkeelle \n#📱QR Code for Reservation Form")
 
 # Kiinteä URL varauslomakkeelle
 form_url = "http://<YOUR-RPI-ADDRESS>:8501/varaus"
