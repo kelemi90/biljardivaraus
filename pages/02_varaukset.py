@@ -62,8 +62,12 @@ else:
 
 st.divider()
 
-st.subheader("⏭️ Seuraava pari")
-if len(temp_data["reservations"]) > 1:
-    st.write(temp_data["reservations"][1]["players"])
+# Seuraavat pelaajat
+st.subheader("⏭️ Seuraavat varaukset")
+next_reservations = temp_data["reservations"][1:5]
+
+if next_reservations:
+    for idx, res in enumerate(next_reservations, start=1):
+        st.write(f"**{idx}.** {res['players']}")
 else:
-    st.write("Ei vielä seuraavaa paria.")
+    st.write("Ei seuraavia varauksia.")
