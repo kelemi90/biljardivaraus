@@ -17,4 +17,3 @@
 
 echo "Käynnistetään: main"
 uv run streamlit run /home/kipe/biljardivaraus/main.py --client.showSidebarNavi>
-

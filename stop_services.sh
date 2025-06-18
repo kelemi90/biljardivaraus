@@ -8,12 +8,3 @@ echo "Sammutetaan palvelut..."
 pkill -f 'uv run'
 
 echo "Kaikki palvelut on sammutettu."
-
-
-
-
-
-
-
-
-
