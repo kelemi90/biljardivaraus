@@ -10,9 +10,9 @@ from pathlib import Path
 #     "qr": "sivu_qr.py"
 # }
 
-# # Hae URL-parametri ?page=...
-# query_params = st.query_params
-# page = query_params.get("page", [None])[0]
+# Hae URL-parametri ?page=...
+query_params = st.query_params
+page = query_params.get("page", [None])[0]
 
 # # Jos parametrina on tunnettu sivu, ladataan se dynaamisesti
 # if page in pages:

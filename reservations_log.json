@@ -1,37 +1,4 @@
 {
-  "date": "2025-04-29",
-  "reservations": [
-    {
-      "players": "Kimmo & Henri",
-      "creator": "Kimmo",
-      "token": "0000",
-      "date": "2025-04-29",
-      "start_time": "22:22:16",
-      "end_time": "22:28:51"
-    },
-    {
-      "players": "ohjaaja & Kimmo",
-      "creator": "OHJAAJA",
-      "token": "0000",
-      "date": "2025-04-29",
-      "start_time": "22:22:45",
-      "end_time": "22:28:51"
-    },
-    {
-      "players": "jere & timo",
-      "creator": "jere",
-      "token": "0000",
-      "date": "2025-04-29",
-      "start_time": "22:22:53",
-      "end_time": "22:28:51"
-    },
-    {
-      "players": "jussi & pekka",
-      "creator": "jussi",
-      "token": "0000",
-      "date": "2025-04-29",
-      "start_time": "22:22:57",
-      "end_time": "22:28:51"
-    }
-  ]
+  "date": "2025-04-25",
+  "reservations": []
 }
