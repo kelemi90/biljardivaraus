@@ -32,7 +32,7 @@ if log_data.get("date") != today:
     log_data = {"date": today, "reservations": []}
     save_data(log_data, LOG_FILE)
 
-st.markdown("# 🎱 Tee varaus \n 🎱 Make a Reservation")
+st.markdown("# 🎱 Tee varaus \n # 🎱 Make a Reservation")
 
 with st.form("varaus_form"):
     player1 = st.text_input("Pelaaja 1/Player 1")
