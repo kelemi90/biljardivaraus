@@ -25,8 +25,11 @@ if page in pages:
         st.error(f"Sivua '{page}' ei löytynyt.")
 else:
     # Jos ei ole parametria tai tuntematon sivu
-    st.title("🎱 Biljardivarausjärjestelmä" \
-    " Biljard Reservation System")
+    st.markdown("""
+    # 🎱 Biljardivarausjärjestelmä  
+    # Billiard Reservation System
+    """)
+
     st.markdown("""
     Tällä sivustolla tehdään Nurkan Biljardivaraukset.
                 
