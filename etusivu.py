@@ -3,12 +3,12 @@ import importlib.util
 from pathlib import Path
 
 # Määrittele saatavilla olevat sivut ja niiden tiedostopolut
-# pages = {
-#     "lomake": "sivu_lomake.py",
-#     "varaukset": "sivu_varaukset.py",
-#     "ohjaaja": "sivu_ohjaaja.py",
-#     "qr": "sivu_qr.py"
-# }
+pages = {
+    "lomake": "sivu_lomake.py",
+    "varaukset": "sivu_varaukset.py",
+    "ohjaaja": "sivu_ohjaaja.py",
+    "qr": "sivu_qr.py"
+}
 
 # Hae URL-parametri ?page=...
 query_params = st.query_params
