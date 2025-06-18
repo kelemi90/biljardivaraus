@@ -16,8 +16,7 @@ def save_data(data, file):
     with open(file, "w") as f:
         json.dump(data, f, indent=2)
 
-st.markdown("""🎮 Käynnissä oleva peli ja varaukset" \
-🎮 Current Game and Reservations""")
+st.markdown("# 🎮 Käynnissä oleva peli ja varaukset \n# 🎮 Current Game and Reservations")
 
 temp_data = load_data(TEMP_FILE)
 log_data = load_data(LOG_FILE)
