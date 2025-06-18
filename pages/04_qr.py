@@ -7,7 +7,7 @@ st.set_page_config(page_title="QR-koodi varauslomakkeelle", page_icon="📱")
 
 st.title("📱 QR-koodi varauslomakkeelle")
 
-# Kiinteä, ennalta määritetty URL
+# Kiinteä URL varauslomakkeelle
 form_url = "http://<YOUR-RPI-ADDRESS>:8501/varaus"
 
 # QR-koodin luonti
@@ -16,7 +16,7 @@ qr.add_data(form_url)
 qr.make(fit=True)
 img = qr.make_image(fill_color="black", back_color="white")
 
-# Muunnetaan kuva base64-muotoon näytettäväksi Streamlitissä
+# Muunnetaan kuva base64-muotoon
 buffered = BytesIO()
 img.save(buffered)
 img_b64 = base64.b64encode(buffered.getvalue()).decode()
@@ -27,6 +27,3 @@ st.image(
     caption="Skannaa varauslomake",
     use_container_width=True
 )
-
-# Näytetään URL tekstinä (ei muokattavissa)
-st.markdown(f"🔗 **Varauslomakkeen osoite:** `{form_url}`")
