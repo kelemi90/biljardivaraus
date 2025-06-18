@@ -35,9 +35,9 @@ if log_data.get("date") != today:
 st.title("🎱 Tee varaus")
 
 with st.form("varaus_form"):
-    player1 = st.text_input("Pelaaja 1")
+    player1 = st.text_input("Pelaaja 1/Player 1")
     player2 = st.text_input("Pelaaja 2")
-    token = st.text_input("Anna 4-numeroinen token (käytetään pelin lopetukseen)", type="password")
+    token = st.text_input("Anna 4-numeroinen token (käytetään pelin lopetukseen)/Give 4-digit token (used to end game)", type="password")
 
     admin_needed = (
         player1.strip().lower() == "ohjaaja" or player2.strip().lower() == "ohjaaja"
@@ -51,7 +51,7 @@ with st.form("varaus_form"):
 
     if submit:
         if not (player1 and player2 and token.isdigit() and len(token) == 4):
-            st.error("Täytä kaikki kentät oikein.")
+            st.error("Täytä kaikki kentät oikein./Please fill all fields correctly.")
             st.stop()
 
         is_admin = admin_needed and (admin_pass == ADMIN_PASSWORD)
@@ -64,7 +64,7 @@ with st.form("varaus_form"):
             last = temp_data["reservations"][-1]
             last_players = [p.strip().lower() for p in last["players"].split("&")]
             if player1.strip().lower() in last_players or player2.strip().lower() in last_players:
-                st.warning("Et voi varata kahta vuoroa peräkkäin.")
+                st.warning("Et voi varata kahta vuoroa peräkkäin./")
                 st.stop()
 
         new_entry = {
@@ -82,4 +82,5 @@ with st.form("varaus_form"):
         save_data(temp_data, TEMP_FILE)
         save_data(log_data, LOG_FILE)
 
-        st.success("Varaus tehty onnistuneesti!")
+        st.success("Varaus tehty onnistuneesti!" \
+        "Reservation made successfully!")

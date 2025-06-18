@@ -5,7 +5,8 @@ import base64
 
 st.set_page_config(page_title="QR-koodi varauslomakkeelle", page_icon="📱")
 
-st.title("📱 QR-koodi varauslomakkeelle")
+st.title("📱 QR-koodi varauslomakkeelle" \
+" QR Code for Reservation Form")
 
 # Kiinteä URL varauslomakkeelle
 form_url = "http://<YOUR-RPI-ADDRESS>:8501/varaus"
@@ -24,6 +25,7 @@ img_b64 = base64.b64encode(buffered.getvalue()).decode()
 # Näytetään QR-koodi
 st.image(
     f"data:image/png;base64,{img_b64}",
-    caption="Skannaa varauslomake",
+    caption="Skannaa varauslomake" \
+    "Scan the reservation form",
     use_container_width=True
 )
